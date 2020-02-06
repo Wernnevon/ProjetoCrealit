@@ -1,0 +1,11 @@
+.margens{
+    margin: 10%;
+    padding: 10%;
+}
+section{
+    display: flex;
+}
+.right{
+    display: flex;
+    margin-left: 48%;
+}

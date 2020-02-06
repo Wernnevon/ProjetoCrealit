@@ -1,0 +1,33 @@
+<mat-toolbar class="white"> 
+    <a class="btn-flat" [routerLink]="['/aluno']" routerLinkActive="router-link-active" ><i class="material-icons prefix">navigate_before</i></a>
+    <span>Aluno</span>
+    <a class="right" [routerLink]="['/aluno']" routerLinkActive="router-link-active"><i class="material-icons black-text">home</i></a>
+</mat-toolbar>
+<section class="teal accent-2">
+    <div class="container">
+        <div class="container"><br>
+            <div class="card-panel">
+                <div>
+                    <mat-accordion>
+                        <mat-expansion-panel *ngFor="let livro of livros">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    {{livro.name}}
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <ul> {{livro.class}}
+                                <li style="margin-left: 60%; margin-top: 1%; margin-bottom: 0%;"><a
+                                        style="font-size: small;"
+                                        class="btn-flat waves-effect waves-grey teal-text darken-3"
+                                        [routerLink]="['/aluno/historia']"
+                                        routerLinkActive="router-link-active">Entrar</a></li>
+                            </ul>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div><br>
+        </div>
+    </div>
+</section>

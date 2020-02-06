@@ -1,0 +1,39 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="teal white-text text-darken-2">MENU</mat-toolbar>
+    <mat-nav-list>
+      <div mat-list-item href="#" class="user-view">
+        <a><img class="circle centerImg" src=""></a>
+      </div>
+      <a mat-list-item href="#">NOME</a>
+      <a mat-list-item href="#">Turmas</a>
+      <a mat-list-item href="#">Livros</a>
+      <a mat-list-item [routerLink]="['/professor/criarHistoria']" routerLinkActive="router-link-active" >Criar história</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content  class=" teal accent-2">
+    <mat-toolbar class="white">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon" class="teal-text">menu</mat-icon>
+        <span style="padding-left: 40%; font-size: 20px;">PROFESSOR</span>
+      </button>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <div class="container">
+      <div class="container"><br><br>
+        <div class="card-panel">
+          <img class="centerImg" width="100px" src="assets/images/logo.png">
+          <h4 class="teal-text text-darken-3 center">Bem Vindo à CREALIT</h4><br>
+          <div class="divider"></div>
+          <br>
+          <div class="container">
+            <li class="grey-text text-darken-2">Seja Bem Vindo ao CREALIT! Boa sorte e lembrem-se o poder é de
+              vocês</li>
+          </div>
+        </div><br><br>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

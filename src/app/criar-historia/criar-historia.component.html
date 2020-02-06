@@ -1,0 +1,29 @@
+<mat-toolbar class="white"> 
+    <a class="btn-flat" [routerLink]="['/professor']" routerLinkActive="router-link-active" ><i class="material-icons prefix">navigate_before</i></a>
+    <span>Professor</span>
+    <a class="right" [routerLink]="['/professor']" routerLinkActive="router-link-active"><i class="material-icons black-text">home</i></a>
+</mat-toolbar>
+<section class="teal accent-2">
+    <div class="container">
+        <div class="card-panel margens">
+            <h5>Criar História
+            </h5>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="paragrafo" class="materialize-textarea"></textarea>
+                            <label for="paragrafo">Paragrafo</label>
+                        </div>
+                        <app-perguntas></app-perguntas>
+                    </div>
+                </form>
+                <div class="center">
+                    <a class="waves-effect waves-teal btn-flat">Adicionar Texto</a>
+                    <a class="waves-effect waves-teal btn-flat">Finalizar História</a>
+                    <a [routerLink]="['/professor/adicionarAlunos']" routerLinkActive="router-link-active"  class="waves-effect waves-teal btn-flat">Adicionar alunos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

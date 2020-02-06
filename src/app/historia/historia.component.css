@@ -1,0 +1,13 @@
+.btn-right{
+    margin-left: 31%;
+}
+.btn-left{
+    margin-right: 31%;
+}
+.margin{
+    margin-top: 15%;
+}
+.right{
+    display: flex;
+    margin-left: 60%;
+}

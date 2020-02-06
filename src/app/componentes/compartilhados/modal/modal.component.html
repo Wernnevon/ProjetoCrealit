@@ -1,0 +1,5 @@
+<div mat-dialog-content>{{message}}</div>
+<div mat-dialog-actions>
+    <a [routerLink]="['/cadastroAluno']" routerLinkActive="router-link-active"  mat-button (click)="onClickNO()">Aluno</a>
+    <a [routerLink]="['/cadastroProfessor']" routerLinkActive="router-link-active"  mat-button [mat-dialog-close]="true">Professor</a>
+</div>

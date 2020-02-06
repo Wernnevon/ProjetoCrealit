@@ -1,0 +1,7 @@
+.right{
+    display: flex;
+    margin-left: 48%;
+}
+.pos-button{
+   float: right;
+}

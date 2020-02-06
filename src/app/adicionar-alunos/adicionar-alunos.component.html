@@ -1,0 +1,31 @@
+<mat-toolbar class="white"> 
+    <a class="btn-flat" [routerLink]="['/professor/criarHistoria']" routerLinkActive="router-link-active" ><i class="material-icons prefix">navigate_before</i></a>
+    <span>Professor</span>
+    <a class="right" [routerLink]="['/professor']" routerLinkActive="router-link-active"><i class="material-icons black-text">home</i></a>
+</mat-toolbar>
+<div class="teal accent-2">
+    <div class="container"><br>
+        <div class="card-panel">
+            <div>
+                <h5 class="center">Adicionar alunos</h5><br>
+                <mat-accordion>
+                    <mat-expansion-panel *ngFor="let turma of turmas">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title style="padding: 2%;"><i style="margin-right: 15%;" class="material-icons prefix">class</i>
+                                {{turma.name}}
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                {{tamanhoTurma(turma)}} alunos
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <ul *ngFor="let aluno of turma.member" style="padding-top: 10%;">
+                            <i style="margin-right: 20%;" class="material-icons prefix">person</i> 
+                            {{aluno.name}}
+                            <button mat-mini-fab class="teal darken-3 pos-button"><i class="material-icons">add</i></button>
+                        </ul>
+                    </mat-expansion-panel>
+                </mat-accordion><br>
+            </div>
+        </div>
+    </div><br>
+</div>
