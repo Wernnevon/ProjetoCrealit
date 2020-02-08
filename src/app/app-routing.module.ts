@@ -1,3 +1,4 @@
+import { RanquesComponent } from './ranques/ranques.component';
 import { AdicionarAlunosComponent } from './adicionar-alunos/adicionar-alunos.component';
 import { CriarHistoriaComponent } from './criar-historia/criar-historia.component';
 import { MinhasHistoriasComponent } from './minhas-historias/minhas-historias.component';
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: "professor/adicionarAlunos",
     component: AdicionarAlunosComponent,
+  },
+  {
+    path: "aluno/rank",
+    component: RanquesComponent,
   }
 ];
 

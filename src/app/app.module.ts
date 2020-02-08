@@ -1,4 +1,4 @@
-import {MatSidenavModule, MatListModule, MatToolbarModule, MatFormFieldModule} from '@angular/material';
+import {MatSidenavModule, MatListModule, MatToolbarModule, MatFormFieldModule, MatSelectModule} from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, OnInit } from '@angular/core';
 
@@ -25,6 +25,7 @@ import { SidenavMenuAlunoComponent } from './sidenav-menu-aluno/sidenav-menu-alu
 import { PerguntasComponent } from './perguntas/perguntas.component';
 import { HistoriaComponent } from './historia/historia.component';
 import { AdicionarAlunosComponent } from './adicionar-alunos/adicionar-alunos.component';
+import { RanquesComponent } from './ranques/ranques.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { AdicionarAlunosComponent } from './adicionar-alunos/adicionar-alunos.co
     PerguntasComponent,
     HistoriaComponent,
     AdicionarAlunosComponent,
+    RanquesComponent,
     ],
   imports: [
     BrowserModule,
@@ -57,6 +59,7 @@ import { AdicionarAlunosComponent } from './adicionar-alunos/adicionar-alunos.co
     MatExpansionModule,
     MatFormFieldModule,
     MatToolbarModule,
+    MatSelectModule
   ],
   entryComponents: [ModalComponent],
   providers: [],

@@ -8,7 +8,7 @@
       </div>
       <a mat-list-item >NOME</a>
       <a mat-list-item >Medalhas</a>
-      <a mat-list-item >Ranking</a>
+      <a [routerLink]="['/aluno/rank']" routerLinkActive="router-link-active"  mat-list-item >Ranking</a>
       <a mat-list-item [routerLink]="['/aluno/minhasAventuras']" routerLinkActive="router-link-active" >Aventuras</a>
     </mat-nav-list>
   </mat-sidenav>
