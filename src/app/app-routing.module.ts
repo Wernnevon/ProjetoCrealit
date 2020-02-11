@@ -1,3 +1,5 @@
+import { DadosProfessorComponent } from './dados-professor/dados-professor.component';
+import { DadosComponent } from './dados/dados.component';
 import { RanquesComponent } from './ranques/ranques.component';
 import { AdicionarAlunosComponent } from './adicionar-alunos/adicionar-alunos.component';
 import { CriarHistoriaComponent } from './criar-historia/criar-historia.component';
@@ -10,6 +12,7 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CadastroAlunosComponent } from './cadastro-alunos/cadastro-alunos.component';
 import { SidenavMenuAlunoComponent } from './sidenav-menu-aluno/sidenav-menu-aluno.component';
+import { MinhasGameficacoesComponent } from './minhas-gameficacoes/minhas-gameficacoes.component';
 
 
 const routes: Routes = [
@@ -52,6 +55,18 @@ const routes: Routes = [
   {
     path: "aluno/rank",
     component: RanquesComponent,
+  },
+  {
+    path: 'aluno/dados',
+    component: DadosComponent,
+  },
+  {
+    path: 'professor/dados',
+    component: DadosProfessorComponent,
+  },
+  {
+    path: 'professor/livros',
+    component: MinhasGameficacoesComponent
   }
 ];
 

@@ -6,9 +6,8 @@
       <div mat-list-item href="#" class="user-view">
         <a><img class="circle centerImg" src=""></a>
       </div>
-      <a mat-list-item href="#">NOME</a>
-      <a mat-list-item href="#">Turmas</a>
-      <a mat-list-item href="#">Livros</a>
+      <a mat-list-item [routerLink]="['/professor/dados']" routerLinkActive="router-link-active" >NOME</a>
+      <a mat-list-item [routerLink]="['/professor/livros']" routerLinkActive="router-link-active" >Livros</a>
       <a mat-list-item [routerLink]="['/professor/criarHistoria']" routerLinkActive="router-link-active" >Criar história</a>
     </mat-nav-list>
   </mat-sidenav>

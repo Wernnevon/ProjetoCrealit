@@ -1,0 +1,9 @@
+.right{
+    display: flex;
+    margin-left: 50%;
+}
+.btn-right{
+    display: block;
+    margin-left: 80%;
+    margin-top: 8%;
+}

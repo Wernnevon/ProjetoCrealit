@@ -26,6 +26,9 @@ import { PerguntasComponent } from './perguntas/perguntas.component';
 import { HistoriaComponent } from './historia/historia.component';
 import { AdicionarAlunosComponent } from './adicionar-alunos/adicionar-alunos.component';
 import { RanquesComponent } from './ranques/ranques.component';
+import { DadosComponent } from './dados/dados.component';
+import { DadosProfessorComponent } from './dados-professor/dados-professor.component';
+import { MinhasGameficacoesComponent } from './minhas-gameficacoes/minhas-gameficacoes.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,9 @@ import { RanquesComponent } from './ranques/ranques.component';
     HistoriaComponent,
     AdicionarAlunosComponent,
     RanquesComponent,
+    DadosComponent,
+    DadosProfessorComponent,
+    MinhasGameficacoesComponent,
     ],
   imports: [
     BrowserModule,

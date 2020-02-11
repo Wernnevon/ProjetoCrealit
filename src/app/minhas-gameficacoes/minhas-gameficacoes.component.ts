@@ -6,11 +6,11 @@ export interface Livros {
 }
 
 @Component({
-  selector: 'app-minhas-historias',
-  templateUrl: './minhas-historias.component.html',
-  styleUrls: ['./minhas-historias.component.css']
+  selector: 'app-minhas-gameficacoes',
+  templateUrl: './minhas-gameficacoes.component.html',
+  styleUrls: ['./minhas-gameficacoes.component.css']
 })
-export class MinhasHistoriasComponent implements OnInit {
+export class MinhasGameficacoesComponent implements OnInit {
   livros: Livros[] = [
     {
       name: 'O Cortiço',
@@ -29,8 +29,9 @@ export class MinhasHistoriasComponent implements OnInit {
       status: 'Concluído',
     }
   ];
-
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
+
 }
