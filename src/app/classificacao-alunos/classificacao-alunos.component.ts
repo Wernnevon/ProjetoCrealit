@@ -1,9 +1,9 @@
-import { Alunos } from './../adicionar-alunos/adicionar-alunos.component';
 import { Component, OnInit } from '@angular/core';
 
 export interface Aluno {
   name: string;
   rank: number;
+  turma: string
 };
 
 @Component({
@@ -16,14 +16,17 @@ export class ClassificacaoAlunosComponent implements OnInit {
     {
       name: 'Junior',
       rank: 100,
+      turma: '2° Intin',
     },
     {
       name: 'Antônio',
       rank: 80,
+      turma: '2° Intin',
     },
     {
       name: 'John',
       rank: 95,
+      turma: '2° Intin',
     }
   ];
   constructor() { }

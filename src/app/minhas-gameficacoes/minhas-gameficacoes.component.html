@@ -24,11 +24,11 @@
                                 'andamento': livro.status == 'Em Andamento'}">
                                     {{livro.status}}</span>
                                 <li style="margin-left: 50%; margin-top: 1%; margin-bottom: 0%;">
-                                    <button style="font-size: small;"
+                                    <!-- <button style="font-size: small;"
                                         class="btn-flat waves-effect waves-grey teal-text darken-3"
                                         
                                         [ngClass]="{'desabilitado': livro.status == 'Concluído'}">Editar
-                                    </button>
+                                    </button> -->
                                     <button [routerLink]="['/professor/classificacao']" routerLinkActive="router-link-active"  style="font-size: small;"
                                         class="btn-flat waves-effect waves-grey teal-text darken-3"
                                         >Classificação
