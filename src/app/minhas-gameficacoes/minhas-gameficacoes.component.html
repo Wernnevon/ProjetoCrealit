@@ -29,7 +29,7 @@
                                         
                                         [ngClass]="{'desabilitado': livro.status == 'Concluído'}">Editar
                                     </button>
-                                    <button style="font-size: small;"
+                                    <button [routerLink]="['/professor/classificacao']" routerLinkActive="router-link-active"  style="font-size: small;"
                                         class="btn-flat waves-effect waves-grey teal-text darken-3"
                                         >Classificação
                                     </button>

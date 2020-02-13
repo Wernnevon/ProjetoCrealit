@@ -1,0 +1,25 @@
+<mat-toolbar class="white">
+    <a class="btn-flat" [routerLink]="['/professor/livros']" routerLinkActive="router-link-active"><i
+            class="material-icons prefix">navigate_before</i></a>
+    <span>Professor</span>
+    <a class="right" [routerLink]="['/professor']" routerLinkActive="router-link-active"><i
+            class="material-icons black-text">home</i></a>
+</mat-toolbar>
+<section class="teal accent-2">
+    <div class="container">
+        <div class="container"><br>
+            <div class="card-panel">
+                <div>
+                    <mat-list>
+                        <h3 style="font-size: 13pt;" mat-subheader>Ranque dos participantes</h3>
+                        <mat-list-item *ngFor="let aluno of alunos">
+                          <mat-icon mat-list-icon>person</mat-icon>
+                          <h4 mat-line> Nome: <span style="text-transform: uppercase;">{{ aluno.name }}</span></h4>
+                          <p mat-line> Pts: <span style="color: #004d40; font-weight: bold;">{{ aluno.rank }}</span> </p>
+                        </mat-list-item>
+                      </mat-list>
+                </div>
+            </div><br>
+        </div>
+    </div>
+</section>

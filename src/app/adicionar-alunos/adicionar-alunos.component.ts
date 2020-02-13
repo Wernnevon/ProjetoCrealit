@@ -1,14 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FUNCTION_TYPE } from '@angular/compiler/src/output/output_ast';
-
-export interface Alunos {
-  name: string;
-  class: string;
-};
-export interface Turma {
-  name: string;
-  member: Alunos[];
-}
+import { Aluno } from '../classificacao-alunos/classificacao-alunos.component';
 
 @Component({
   selector: 'app-adicionar-alunos',
@@ -21,63 +12,22 @@ export class AdicionarAlunosComponent implements OnInit {
 
   ngOnInit() {
   }
-  primeiroIntin: Alunos[] = [
-    {
-      name: 'Negão',
-      class: '1° Intin',
-    },
-    {
-      name: 'Wandenbar',
-      class: '1° Intin',
-    },
-    {
-      name: 'David',
-      class: '1° Intin',
-    }
-  ];
-  segundoIntin: Alunos[] = [
+  segundoIntin: Aluno[] = [
     {
       name: 'Tonho',
-      class: '2° Intin',
+      rank: 45,
     },
     {
       name: 'Chico',
-      class: '2° Intin',
+      rank: 80,
     },
     {
       name: 'João',
-      class: '2° Intin',
+      rank: 69,
     }
   ];
-  terceiroIntin: Alunos[] = [
-    {
-      name: 'Andre',
-      class: '3° Intin',
-    },
-    {
-      name: 'Thiago',
-      class: '3° Intin',
-    },
-    {
-      name: 'Afonso',
-      class: '3° Intin',
-    }
-  ];
-  turmas: Turma[] = [
-    {
-      name: '1° Intin',
-      member: this.primeiroIntin,
-    },
-    {
-      name: '2° Intin',
-      member: this.segundoIntin,
-    },
-    {
-      name: '3° Intin',
-      member: this.segundoIntin,
-    },
-  ];
-  tamanhoTurma(classe: Turma){
-    return classe.member.length
+  
+  tamanhoTurma(classe: Aluno[]){
+    return classe.length;
   };
 }

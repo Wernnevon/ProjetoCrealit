@@ -1,7 +1,9 @@
-<mat-toolbar class="white"> 
-    <a class="btn-flat" [routerLink]="['/professor']" routerLinkActive="router-link-active" ><i class="material-icons prefix">navigate_before</i></a>
+<mat-toolbar class="white">
+    <a class="btn-flat" [routerLink]="['/professor']" routerLinkActive="router-link-active"><i
+            class="material-icons prefix">navigate_before</i></a>
     <span>Professor</span>
-    <a class="right" [routerLink]="['/professor']" routerLinkActive="router-link-active"><i class="material-icons black-text">home</i></a>
+    <a class="right" [routerLink]="['/professor']" routerLinkActive="router-link-active"><i
+            class="material-icons black-text">home</i></a>
 </mat-toolbar>
 <section class="teal accent-2">
     <div class="container">
@@ -9,19 +11,64 @@
             <h5>Criar História
             </h5>
             <div class="row">
-                <form class="col s12">
+                <form class="col s12" #f="ngForm" (ngSubmit)="onSubmit()">
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="paragrafo" class="materialize-textarea"></textarea>
+                            <textarea id="paragrafo" class="materialize-textarea" [(ngModel)]="componenteHistoria.texto" [ngModelOptions]="{standalone: true}"></textarea>
                             <label for="paragrafo">Paragrafo</label>
                         </div>
-                        <app-perguntas></app-perguntas>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="textarea1" class="materialize-textarea" [(ngModel)]="componenteHistoria.pergunta.pergunta" [ngModelOptions]="{standalone: true}"></textarea>
+                                <label for="textarea1">Pergunta</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div>
+                                <div>
+                                    <label class="row">
+                                        <input name="group1" type="radio" class=" col s2 pos-left"/>
+                                        <span>A:</span>
+                                        <input type="text" class="validate col s9 pos-right" [(ngModel)]="componenteHistoria.pergunta.alternativas[0]" [ngModelOptions]="{standalone: true}"/>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="row">
+                                        <input name="group1" type="radio" class=" col s2 pos-left"/>
+                                        <span>B:</span>
+                                        <input type="text" class="validate col s9 pos-right" [(ngModel)]="componenteHistoria.pergunta.alternativas[1]" [ngModelOptions]="{standalone: true}"/>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="row">
+                                        <input name="group1" type="radio" class=" col s2 pos-left"/>
+                                        <span>C:</span>
+                                        <input type="text" class="validate col s9 pos-right" [(ngModel)]="componenteHistoria.pergunta.alternativas[2]" [ngModelOptions]="{standalone: true}"/>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="row">
+                                        <input name="group1" type="radio" class=" col s2 pos-left"/>
+                                        <span>D:</span>
+                                        <input type="text" class="validate col s9 pos-right" [(ngModel)]="componenteHistoria.pergunta.alternativas[3]" [ngModelOptions]="{standalone: true}"/>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="row">
+                                        <input name="group1" type="radio" class=" col s2 pos-left"/>
+                                        <span>E:</span>
+                                        <input type="text" class="validate col s9 pos-right" [(ngModel)]="componenteHistoria.pergunta.alternativas[4]" [ngModelOptions]="{standalone: true}"/>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </form>
                 <div class="center">
-                    <a class="waves-effect waves-teal btn-flat">Adicionar Texto</a>
+                    <a class="waves-effect waves-teal btn-flat" (click)="salvarPragrafo()">Adicionar Texto</a>
                     <a class="waves-effect waves-teal btn-flat">Finalizar História</a>
-                    <a [routerLink]="['/professor/adicionarAlunos']" routerLinkActive="router-link-active"  class="waves-effect waves-teal btn-flat">Adicionar alunos</a>
+                    <a [routerLink]="['/professor/adicionarAlunos']" routerLinkActive="router-link-active"
+                        class="waves-effect waves-teal btn-flat">Adicionar alunos</a>
                 </div>
             </div>
         </div>

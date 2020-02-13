@@ -1,3 +1,4 @@
+import { ClassificacaoAlunosComponent } from './classificacao-alunos/classificacao-alunos.component';
 import { DadosProfessorComponent } from './dados-professor/dados-professor.component';
 import { DadosComponent } from './dados/dados.component';
 import { RanquesComponent } from './ranques/ranques.component';
@@ -66,8 +67,13 @@ const routes: Routes = [
   },
   {
     path: 'professor/livros',
-    component: MinhasGameficacoesComponent
+    component: MinhasGameficacoesComponent,
+  },
+  {
+    path: 'professor/classificacao',
+    component: ClassificacaoAlunosComponent,
   }
+
 ];
 
 @NgModule({

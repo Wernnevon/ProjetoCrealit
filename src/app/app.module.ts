@@ -22,13 +22,13 @@ import { SidenavMenuProfessorComponent } from './sidenav-menu-professor/sidenav-
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material/icon';
 import { SidenavMenuAlunoComponent } from './sidenav-menu-aluno/sidenav-menu-aluno.component';
-import { PerguntasComponent } from './perguntas/perguntas.component';
 import { HistoriaComponent } from './historia/historia.component';
 import { AdicionarAlunosComponent } from './adicionar-alunos/adicionar-alunos.component';
 import { RanquesComponent } from './ranques/ranques.component';
 import { DadosComponent } from './dados/dados.component';
 import { DadosProfessorComponent } from './dados-professor/dados-professor.component';
 import { MinhasGameficacoesComponent } from './minhas-gameficacoes/minhas-gameficacoes.component';
+import { ClassificacaoAlunosComponent } from './classificacao-alunos/classificacao-alunos.component';
 
 @NgModule({
   declarations: [
@@ -42,13 +42,13 @@ import { MinhasGameficacoesComponent } from './minhas-gameficacoes/minhas-gamefi
     ModalComponent,
     SidenavMenuProfessorComponent,
     SidenavMenuAlunoComponent,
-    PerguntasComponent,
     HistoriaComponent,
     AdicionarAlunosComponent,
     RanquesComponent,
     DadosComponent,
     DadosProfessorComponent,
     MinhasGameficacoesComponent,
+    ClassificacaoAlunosComponent,
     ],
   imports: [
     BrowserModule,

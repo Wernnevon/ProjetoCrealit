@@ -1,14 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-interface Historia {
-  texto: String,
+
+export interface Historia {
+  texto: string,
   pergunta: Pergunta,
-  autor: String,
+  autor: string,
+  turma: Aluno[],
 };
-interface Pergunta {
-  pergunta: String,
-  alternativas: [String],
-  resposta: String,
+export interface Pergunta {
+  pergunta: string,
+  alternativas: string[],
+  resposta: string,
 };
+export interface Aluno {
+  nome: string,
+  turma: string,
+  rank: number,
+};
+
+
 @Component({
   selector: 'app-criar-historia',
   templateUrl: './criar-historia.component.html',
@@ -20,5 +29,26 @@ export class CriarHistoriaComponent implements OnInit {
   
   ngOnInit() {
   }
+  historia: Historia[] = new Array<Historia>();
+  componenteHistoria: Historia = {
 
+    texto: '',
+    pergunta:{
+      pergunta: '',
+      alternativas: ['', '', '', '', ''],
+      resposta: '',
+    },
+    autor: '',
+    turma: [],
+  }
+  salvarPragrafo(){
+    this.historia.push(this.componenteHistoria);
+    console.log(this.componenteHistoria);
+    this.historia.forEach(function(value){
+      console.log(value);
+    });
+  }
+  finalizar(){
+    return 0;
+  }
 }
