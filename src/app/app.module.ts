@@ -1,6 +1,7 @@
-import {MatSidenavModule, MatListModule, MatToolbarModule, MatFormFieldModule, MatSelectModule} from '@angular/material';
+import {MatSidenavModule, MatListModule, MatToolbarModule, MatFormFieldModule, MatSelectModule, MatRadioModule} from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, OnInit } from '@angular/core';
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -65,7 +66,9 @@ import { ClassificacaoAlunosComponent } from './classificacao-alunos/classificac
     MatExpansionModule,
     MatFormFieldModule,
     MatToolbarModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule,
+    MatRadioModule
   ],
   entryComponents: [ModalComponent],
   providers: [],

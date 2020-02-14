@@ -1,4 +1,15 @@
+import { ApiService } from './../api.service';
 import { Component, OnInit } from '@angular/core';
+
+
+export class Aluno {
+  nome: string;
+  nascinmeto: Date;
+  sexo: string;
+  turma: string;
+  senha: string;
+  email: string;
+}
 
 @Component({
   selector: 'app-cadastro-alunos',
@@ -7,9 +18,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroAlunosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
   }
+  
+  aluno: Aluno = new Aluno();
 
+  confirmacao: string;
+
+  salvar(){
+    console.log(this.aluno);
+  }
 }

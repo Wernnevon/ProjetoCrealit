@@ -1,20 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 
-export interface Historia {
-  texto: string,
-  pergunta: Pergunta,
-  autor: string,
-  turma: Aluno[],
+export class Historia {
+  texto: string;
+  pergunta: Pergunta;
+  autor: string;
+  turma: Aluno[];
+
+  constructor(){
+    this.pergunta = new Pergunta();
+    this.turma = new Array <Aluno>();
+  }
 };
-export interface Pergunta {
-  pergunta: string,
-  alternativas: string[],
-  resposta: string,
+export class Pergunta {
+  pergunta: string;
+  alternativas: string[];
+  resposta: string;
+  constructor(){
+    this.alternativas = new Array;
+  }
 };
-export interface Aluno {
-  nome: string,
-  turma: string,
-  rank: number,
+export class Aluno {
+  nome: string;
+  turma: string;
+  rank: number;
 };
 
 
@@ -28,26 +36,18 @@ export class CriarHistoriaComponent implements OnInit {
   constructor() { }
   
   ngOnInit() {
+    console.log(this.componenteHistoria)
+    console.log(this.historia.length);
   }
   historia: Historia[] = new Array<Historia>();
-  componenteHistoria: Historia = {
-
-    texto: '',
-    pergunta:{
-      pergunta: '',
-      alternativas: ['', '', '', '', ''],
-      resposta: '',
-    },
-    autor: '',
-    turma: [],
-  }
+  componenteHistoria = new Historia();
   salvarPragrafo(){
     this.historia.push(this.componenteHistoria);
-    console.log(this.componenteHistoria);
-    this.historia.forEach(function(value){
-      console.log(value);
-    });
-  }
+    console.log("componenteHistoria"+this.componenteHistoria);
+    console.log(this.historia)
+    console.log(this.historia.length);
+    this.componenteHistoria = new Historia();
+  };
   finalizar(){
     return 0;
   }

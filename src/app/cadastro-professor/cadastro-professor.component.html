@@ -1,54 +1,50 @@
 <section class="teal accent-2">
+    <div class="container">
         <div class="container">
-            <div class="container">
-                <div class="card-panel">
-                    <br>
-                    <div class="row">
-                        <div class="teal-text text-darken-3">
-                            <div class="center-align">
-                                <h3 class="teal-text text-darken-3">CREALIT</h3>
-                                <h5 class="teal-text text-darken-3">Cadastro de Professor</h5>
-                            </div>
-                            <div class="input-field col s12">
-                                <input type="text" class="teal-text text-darken-3" name="" value="">
-                                <label class="teal-text text-darken-3" for="">Nome</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <span for="" class="teal-text text-darken-3">Data de Nascimento</span>
-                                <input type="date" class="teal-text text-darken-3" name="" value="">
-                            </div>
-                            <div class="input-field col s12">
-                                <div>
-                                    <div><label class="teal-text text-darken-3">Sexo</label></div>
-                                    <label>
-                                        <input name="group1" type="radio" checked value="Masculino" />
-                                        <span class="teal-text text-darken-3">Masculino</span>
-                                    </label>
-                                    <label>
-                                        <input name="group1" type="radio" value="Feminino" />
-                                        <span class="teal-text text-darken-3">Feminino</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="input-field col s12">
-                                <input type="text" class="teal-text text-darken-3" name="" value="">
-                                <label class="teal-text text-darken-3" for="">Matricula</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <input type="password" name="" value="">
-                                <label class="teal-text text-darken-3" for="">Senha</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <input type="password" name="" value="">
-                                <label class="teal-text text-darken-3" for="">Confirme a Senha</label>
-                            </div>
-                            <div class="row center-align">
-                                <button type="button" class="btn teal darken-4" name="button">Salvar</button>
-                                <button type="button" class="btn teal darken-4" name="button">Limpar</button>
-                            </div>
+            <div class="card-panel">
+                <br>
+                <div class="row">
+                    <div>
+                        <div class="center-align">
+                            <h3 class="teal-text text-darken-3">CREALIT</h3>
+                            <h5 class="teal-text text-darken-3">Cadastro de Professor</h5>
+                        </div>
+                        <div class="input-field col s12">
+                            <input type="text" class="teal-text text-darken-3" name="" value="">
+                            <label class="teal-text text-darken-3" for="">Nome</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <span for="" class="teal-text text-darken-3">Data de Nascimento</span>
+                            <input type="date" class="teal-text text-darken-3" name="" value="">
+                        </div>
+                        <div class="input-field col s12">
+                            <label class="teal-text">Sexo</label><br> <br>
+                            <mat-radio-group class="teal-text" [(ngModel)]="professor.sexo">
+                                <mat-radio-button style="margin-right: 2%;" value="Masculino">Masculino
+                                </mat-radio-button>
+                                <mat-radio-button style="padding-left: 2%;" value="Feminino">Feminino</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="input-field col s12">
+                            <input type="email" class="teal-text text-darken-3" name="" [(ngModel)]="professor.email">
+                            <label class="teal-text text-darken-3" for="">Email</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input type="password" name="password" [(ngModel)]="professor.senha">
+                            <label class="teal-text text-darken-3" for="">Senha</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input type="password" id="confirmacao" name="confirmacao" [(ngModel)]="confirmacao">
+                            <label class="teal-text text-darken-3" for="confirmacao">Confirme a Senha</label>
+                            <p *ngIf="confirmacao != professor.senha" class="error"> Senhas diferentes </p>
+                        </div>
+                        <div class="row center-align">
+                            <button type="button" class="btn teal darken-4" (click)="salvar()" name="salvar">Salvar</button>
+                            <button type="button" class="btn teal darken-4" name="limpar">Limpar</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </section>
