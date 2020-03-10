@@ -1,3 +1,6 @@
+import { Observable } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-ranques',
@@ -6,12 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RanquesComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private db: AngularFireDatabase,
+    private route: ActivatedRoute,
+    private router: Router,
+  ) { }
 
   ranques: string;
   cor: string;
 
-  rank: string = "Diamante";
+  rank: string = "Bronze";
   
   ngOnInit() {
     switch (this.rank) {
@@ -41,6 +48,35 @@ export class RanquesComponent implements OnInit {
         break;
       default:
         break;
-    }
+    };
+    this.search();
+  }
+  alunos: Observable<any[]>;
+  aluno: any;
+  user: any;
+  nome : any;
+
+  search() {
+    let id = this.route.snapshot.params['id'];
+    id = parseInt(id);
+    this.alunos = this.db.list('alunos').valueChanges();
+    this.alunos.forEach(obj => {
+      obj.forEach(objChild => {
+        this.aluno = objChild.data;
+        if (this.aluno.id === id) {
+          console.log('retornou!');
+          this.user = this.aluno;
+          this.nome = this.user.nome;
+          console.log(this.user)
+        } else {
+          console.log('não retornou')
+          return false;
+        }
+      })
+    })
+  }
+  back(){
+    let id = this.route.snapshot.params['id'];
+    this.router.navigate(['/aluno/' + id]);
   }
 }

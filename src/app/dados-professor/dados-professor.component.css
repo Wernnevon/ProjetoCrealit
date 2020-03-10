@@ -1,6 +1,8 @@
 .right{
     display: flex;
-    margin-left: 50%;
+    position: absolute;
+    right: 0px;
+    margin-right: 5%;
 }
 .btn-right{
     display: block;

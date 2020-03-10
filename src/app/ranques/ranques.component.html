@@ -1,9 +1,9 @@
 <mat-toolbar class="white">
-    <a class="btn-flat" [routerLink]="['/aluno']" routerLinkActive="router-link-active"><i
+    <a class="btn-flat" (click)="back()"><i
             class="material-icons prefix">navigate_before</i></a>
-    <span>Aluno</span>
-    <a class="right" [routerLink]="['/aluno']" routerLinkActive="router-link-active"><i
-            class="material-icons black-text">home</i></a>
+            <span style="font-size: 20px; text-transform: uppercase; color: #505050;">{{nome}}</span>
+    <a class="right" (click)="back()">
+        <i class="material-icons" style="color: #505050;">home</i></a>
 </mat-toolbar>
 <section class="teal accent-2">
     <div class="container">
@@ -13,7 +13,9 @@
                     <img width="100%" height="100%" src="{{ranques}}" />
                 </div>
                 <p class="center" style="font-size: 15pt;">Seu ranque atual é:</p>
-                <p class="center" class="ranque" [style.color]="cor">{{rank}}</p>
+                <p class="center ranque" [style.color]="cor">{{rank}}</p>
+                <p class="center" style="font-size: 15pt;">Você possui:</p>
+                <p class="center" style="color: #004d40; font-weight: bold; font-size: 15pt;">{{ user.rank }} pts</p>
             </div><br>
         </div>
     </div>

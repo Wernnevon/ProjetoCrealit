@@ -7,7 +7,9 @@ section{
 }
 .right{
     display: flex;
-    margin-left: 48%;
+    position: absolute;
+    right: 0px;
+    margin-right: 5%;
 }
 .pos-right{
     display: flex;

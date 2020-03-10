@@ -9,5 +9,7 @@
 }
 .right{
     display: flex;
-    margin-left: 60%;
+    position: absolute;
+    right: 0px;
+    margin-right: 5%;
 }

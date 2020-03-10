@@ -4,11 +4,11 @@
     <mat-toolbar class="teal white-text text-darken-2">MENU</mat-toolbar>
     <mat-nav-list>
       <div mat-list-item href="#" class="user-view">
-        <a><img class="circle centerImg" src=""></a>
+        <a><img class="circle centerImg" src="assets/images/logo.png"></a>
       </div>
-      <a [routerLink]="['/aluno/dados']" routerLinkActive="router-link-active"  mat-list-item >NOME</a>
-      <a [routerLink]="['/aluno/rank']" routerLinkActive="router-link-active"  mat-list-item >Ranking</a>
-      <a mat-list-item [routerLink]="['/aluno/minhasAventuras']" routerLinkActive="router-link-active" >Aventuras</a>
+      <a (click)="dados()" mat-list-item >Dados</a>
+      <a (click)="rank()" mat-list-item >Ranking</a>
+      <a (click)="aventuras()" mat-list-item>Aventuras</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content  class=" teal accent-2">
@@ -16,7 +16,7 @@
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon" class="teal-text">menu</mat-icon>
-        <span style="padding-left: 40%; font-size: 20px;">ALUNO</span>
+        <span style="padding-left: 40%; font-size: 20px; text-transform: uppercase; color: #505050;">{{nome}}</span>
       </button>
     </mat-toolbar>
     <!-- Add Content Here -->

@@ -30,47 +30,47 @@ const routes: Routes = [
     component: CadastroAlunosComponent,
   },
   {
-    path: "professor",
+    path: "professor/:id",
     component: SidenavMenuProfessorComponent,
   },
   {
-    path: "aluno",
+    path: "aluno/:id",
     component: SidenavMenuAlunoComponent,
   },
   {
-    path: "aluno/minhasAventuras",
+    path: "aluno/:id/minhasAventuras",
     component: MinhasHistoriasComponent,
   },
   {
-    path: "aluno/historia",
+    path: "aluno/:id/historia",
     component: HistoriaComponent,
   },
   {
-    path: "professor/criarHistoria",
+    path: "professor/:id/criarHistoria",
     component: CriarHistoriaComponent,
   },
   {
-    path: "professor/adicionarAlunos",
+    path: "professor/:id/adicionarAlunos",
     component: AdicionarAlunosComponent,
   },
   {
-    path: "aluno/rank",
+    path: "aluno/:id/rank",
     component: RanquesComponent,
   },
   {
-    path: 'aluno/dados',
+    path: 'aluno/:id/dados',
     component: DadosComponent,
   },
   {
-    path: 'professor/dados',
+    path: 'professor/:id/dados',
     component: DadosProfessorComponent,
   },
   {
-    path: 'professor/livros',
+    path: 'professor/:id/livros',
     component: MinhasGameficacoesComponent,
   },
   {
-    path: 'professor/classificacao',
+    path: 'professor/:id/classificacao',
     component: ClassificacaoAlunosComponent,
   }
 

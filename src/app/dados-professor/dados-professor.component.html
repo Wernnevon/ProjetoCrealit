@@ -1,41 +1,29 @@
 <mat-toolbar class="white">
-    <a class="btn-flat" [routerLink]="['/professor']" routerLinkActive="router-link-active"><i
-            class="material-icons prefix">navigate_before</i></a>
-    <span>Professor</span>
-    <a class="right" [routerLink]="['/professor']" routerLinkActive="router-link-active"><i
-            class="material-icons black-text">home</i></a>
+  <a class="btn-flat" (click)="back()"><i
+          class="material-icons prefix">navigate_before</i></a>
+          <span style="font-size: 20px; text-transform: uppercase; color: #505050;">{{nome}}</span>
+  <a class="right" (click)="back()">
+      <i class="material-icons" style="color: #505050;">home</i></a>
 </mat-toolbar>
 <div class="container">
     <div class="container"><br>
         <div class="card-panel">
             <div>
-                <h5 class="center">Seus Dados</h5>
-                <table>
+              <h5 class="center">Seus Dados</h5>
+              <table>
                     <tr>
-                      <td>
-                        <output>---</output>
-                      </td>
-                      <td>
-                        <output>---</output>
-                      </td>
+                      <output><b>NOME: </b>{{user.nome}}</output>
                     </tr>
                     <tr>
-                      <td>
-                        <output>---</output>
-                      </td>
-                      <td>
-                        <output>---</output>
-                      </td>
+                      <output><b>EMAIL: </b>{{user.email}}</output>
                     </tr>
                     <tr>
-                      <td>
-                        <output>---</output>
-                      </td>
-                      <td>
-                        <output>---</output>
-                      </td>
+                      <output><b>SEXO: </b>{{user.sexo}}</output>
                     </tr>
-                  </table>
+                    <tr>
+                      <output><b>NASCIMENTO: </b>{{user.nascimento}}</output>
+                    </tr>
+                </table>
                   <a class="btn-floating btn-right waves-effect"><i class="material-icons">edit</i></a>
             </div>
         </div>

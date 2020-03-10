@@ -31,6 +31,11 @@ import { DadosProfessorComponent } from './dados-professor/dados-professor.compo
 import { MinhasGameficacoesComponent } from './minhas-gameficacoes/minhas-gameficacoes.component';
 import { ClassificacaoAlunosComponent } from './classificacao-alunos/classificacao-alunos.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +73,9 @@ import { ClassificacaoAlunosComponent } from './classificacao-alunos/classificac
     MatToolbarModule,
     MatSelectModule,
     HttpClientModule,
-    MatRadioModule
+    MatRadioModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
   ],
   entryComponents: [ModalComponent],
   providers: [],

@@ -1,9 +1,9 @@
 <mat-toolbar class="white">
-    <a class="btn-flat" [routerLink]="['/aluno']" routerLinkActive="router-link-active"><i
+    <a class="btn-flat" (click)="back()"><i
             class="material-icons prefix">navigate_before</i></a>
-    <span>Aluno</span>
-    <a class="right" [routerLink]="['/aluno']" routerLinkActive="router-link-active"><i
-            class="material-icons black-text">home</i></a>
+            <span style="font-size: 20px; text-transform: uppercase; color: #505050;">{{nome}}</span>
+    <a class="right" (click)="back()">
+        <i class="material-icons" style="color: #505050;">home</i></a>
 </mat-toolbar>
 <section class="teal accent-2">
     <div class="container">
@@ -26,7 +26,7 @@
                                 <li style="margin-left: 60%; margin-top: 1%; margin-bottom: 0%;"><button
                                         style="font-size: small;"
                                         class="btn-flat waves-effect waves-grey teal-text darken-3"
-                                        [routerLink]="['/aluno/historia']" routerLinkActive="router-link-active"
+                                        (click)='historia()'
                                         [ngClass]="{'desabilitado': livro.status == 'Concluído'}">Entrar</button></li>
                             </ul>
                         </mat-expansion-panel>

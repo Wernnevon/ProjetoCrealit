@@ -1,9 +1,9 @@
 <mat-toolbar class="white">
-    <a class="btn-flat" [routerLink]="['/aluno']" routerLinkActive="router-link-active"><i
-            class="material-icons prefix">navigate_before</i></a>
-    <span>Aluno</span>
-    <a class="right" [routerLink]="['/aluno']" routerLinkActive="router-link-active"><i
-            class="material-icons black-text">home</i></a>
+  <a class="btn-flat" (click)="back()"><i
+          class="material-icons prefix">navigate_before</i></a>
+          <span style="font-size: 20px; text-transform: uppercase; color: #505050;">{{nome}}</span>
+  <a class="right" (click)="back()">
+      <i class="material-icons" style="color: #505050;">home</i></a>
 </mat-toolbar>
 <div class="container">
     <div class="container"><br>
@@ -11,30 +11,24 @@
             <div>
                 <h5 class="center">Seus Dados</h5>
                 <table>
-                    <tr>
-                      <td>
-                        <output>---</output>
-                      </td>
-                      <td>
-                        <output>---</output>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <output>---</output>
-                      </td>
-                      <td>
-                        <output>---</output>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <output>---</output>
-                      </td>
-                      <td>
-                        <output>---</output>
-                      </td>
-                    </tr>
+                      <tr>
+                        <output><b>NOME: </b>{{user.nome}}</output>
+                      </tr>
+                      <tr>
+                        <output><b>EMAIL: </b>{{user.email}}</output>
+                      </tr>
+                      <tr>
+                        <output><b>TURMA: </b>{{user.turma}}</output>
+                      </tr>
+                      <tr>
+                        <output><b>SEXO: </b>{{user.sexo}}</output>
+                      </tr>
+                      <tr>
+                        <output><b>RANK: </b>{{user.rank}}</output>
+                      </tr>
+                      <tr>
+                        <output><b>NASCIMENTO: </b>{{user.nascimento}}</output>
+                      </tr>
                   </table>
                   <a class="btn-floating btn-right waves-effect"><i class="material-icons">edit</i></a>
             </div>

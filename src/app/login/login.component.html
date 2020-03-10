@@ -11,13 +11,14 @@
                                 <h3 class="teal-text text-darken-3">CREALIT</h3>
                             </div>
                             <div class="input-field col s12">
-                                <input id="usuario" type="text" class="teal-text text-darken-3" name="" value="">
+                                <input id="usuario" type="text" [(ngModel)]="usuario" class="teal-text text-darken-3" name="usuario" value="">
                                 <label class="teal-text text-darken-3" for="usuario">Usuário</label>
                             </div>
                             <div class="input-field col s12">
-                                <input id="senha" type="password" name="" value="">
+                                <input id="senha" type="password" [(ngModel)]="senha" name="senha" value="">
                                 <label class="teal-text text-darken-3" for="senha">Senha</label>
                             </div>
+                            <p *ngIf="logOn" class="error"> Usuário ou senhas incorretos </p>
                             <div class="input-field col s12">
                                 <span>Não possui conta?
                                     <a mat-button (click)="openDialog()">Clique aqui!</a>
@@ -25,7 +26,7 @@
                             </div>
                         </div>
                         <div class="row center-align">
-                            <button type="button" class="btn teal darken-4" name="button">Login</button>
+                            <button type="button" class="btn teal darken-4" (click)="logIn()" name="buttonLogIn">Login</button>
                         </div>
                     </div><br><br>
                 </div>

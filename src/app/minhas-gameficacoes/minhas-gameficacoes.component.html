@@ -1,10 +1,10 @@
 <mat-toolbar class="white">
-    <a class="btn-flat" [routerLink]="['/professor']" routerLinkActive="router-link-active"><i
+    <a class="btn-flat" (click)="back()"><i
             class="material-icons prefix">navigate_before</i></a>
-    <span>Professor</span>
-    <a class="right" [routerLink]="['/professor']" routerLinkActive="router-link-active"><i
-            class="material-icons black-text">home</i></a>
-</mat-toolbar>
+            <span style="font-size: 20px; text-transform: uppercase; color: #505050;">{{nome}}</span>
+    <a class="right" (click)="back()">
+        <i class="material-icons" style="color: #505050;">home</i></a>
+  </mat-toolbar>
 <section class="teal accent-2">
     <div class="container">
         <div class="container"><br>
@@ -29,7 +29,7 @@
                                         
                                         [ngClass]="{'desabilitado': livro.status == 'Concluído'}">Editar
                                     </button> -->
-                                    <button [routerLink]="['/professor/classificacao']" routerLinkActive="router-link-active"  style="font-size: small;"
+                                    <button (click)='classificacao()' style="font-size: small;"
                                         class="btn-flat waves-effect waves-grey teal-text darken-3"
                                         >Classificação
                                     </button>

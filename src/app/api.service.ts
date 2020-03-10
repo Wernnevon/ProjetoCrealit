@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, throwError } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { catchError, tap, map } from 'rxjs/operators';
-const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
-};
-const apiUrl = 'http://localhost:3001/api';
+import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+const apiUrl = 'http://localhost:3001/api/player/';
 
 @Injectable({
   providedIn: 'root'
@@ -15,44 +11,25 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getPlayers (): Observable<any> {
-    return this.http.get<any[]>(apiUrl)
-      .pipe(
-        tap(produtos => console.log('leu os players')),
-        catchError(this.handleError('getPlayers', []))
-      );
+    return this.http.get<any>(apiUrl);
   }
 
-  getPlayer(id: number): Observable<any> {
-    const url = `${apiUrl}/${id}`;
-    return this.http.get<any>(url).pipe(
-      tap(_ => console.log(`leu o player id=${id}`)),
-      catchError(this.handleError<any>(`getPlayer id=${id}`))
-    );
+  getPlayer(id): Observable<any> {
+    return this.http.get<any>(apiUrl + id);
   }
 
-  addPlayer (produto): Observable<any> {
-    return this.http.post<any>(apiUrl, produto, httpOptions).pipe(
-      // tslint:disable-next-line:no-shadowed-variable
-      tap((player: any) => console.log(`adicionou o player com w/ id=${produto._id}`)),
-      catchError(this.handleError<any>('addPlayer'))
-    );
+  addPlayer (player): Observable<any> {
+
+    console.log("passou aki");
+    return this.http.post<any>(apiUrl, JSON.stringify(player));
   }
 
   updatePlayer(id, player: any): Observable<any> {
-    const url = `${apiUrl}/${id}`;
-    return this.http.put(url, player, httpOptions).pipe(
-      tap(_ => console.log(`atualiza o player com id=${id}`)),
-      catchError(this.handleError<any>('updatePlayer'))
-    );
+    return this.http.put(apiUrl, JSON.stringify(player));
   }
 
   deletePlayer (id): Observable<any> {
-    const url = `${apiUrl}/delete/${id}`;
-
-    return this.http.delete<any>(url, httpOptions).pipe(
-      tap(_ => console.log(`remove o produto com id=${id}`)),
-      catchError(this.handleError<any>('deletePlayer'))
-    );
+    return this.http.delete<any>(apiUrl + id);
   }
 
   private handleError<T> (operation = 'operation', result?: T) {
