@@ -34,7 +34,8 @@ import { ClassificacaoAlunosComponent } from './classificacao-alunos/classificac
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-
+import { ClasseComponent } from './classe/classe.component';
+import { CriarClasseComponent } from './criar-classe/criar-classe.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     DadosProfessorComponent,
     MinhasGameficacoesComponent,
     ClassificacaoAlunosComponent,
+    ClasseComponent,
+    CriarClasseComponent,
     ],
   imports: [
     BrowserModule,

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Aluno } from '../classificacao-alunos/classificacao-alunos.component';
 
 interface Turma {
   name: string;
-  member: Aluno[];
+  member: any[];
 }
 
 @Component({
@@ -17,7 +16,7 @@ export class AdicionarAlunosComponent implements OnInit {
 
   ngOnInit() {
   }
-  primeiroIntin: Aluno[] = [
+  primeiroIntin: any[] = [
     {
       name: 'Tonho',
       rank: 45,
@@ -34,7 +33,7 @@ export class AdicionarAlunosComponent implements OnInit {
       turma: '1° Intin',
     }
   ];
-  segundoIntin: Aluno[] = [
+  segundoIntin: any[] = [
     {
       name: 'Tonho',
       rank: 45,
@@ -66,7 +65,7 @@ export class AdicionarAlunosComponent implements OnInit {
       turma: '2° Intin',
     }
   ];
-  terceiroIntin: Aluno[] = [
+  terceiroIntin: any[] = [
     {
       name: 'Tonho',
       rank: 45,

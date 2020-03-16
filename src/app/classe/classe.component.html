@@ -1,0 +1,32 @@
+<mat-toolbar class="white">
+    <a class="btn-flat" (click)="back()"><i
+            class="material-icons prefix">navigate_before</i></a>
+            <span style="font-size: 20px; text-transform: uppercase; color: #505050;">{{nome}}</span>
+    <a class="right" (click)="back()">
+        <i class="material-icons" style="color: #505050;">home</i></a>
+  </mat-toolbar>
+<section class="teal accent-2">
+    <div class="container">
+        <div class="container"><br>
+            <div class="card-panel">
+                <div>
+                    <mat-accordion>
+                        <mat-expansion-panel *ngFor="let turma of turmas | async">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    {{ turma.data.nome }}
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                                    <button (click)='sala(turma.data.nome)' style="font-size: small;"
+                                        class="btn-flat waves-effect waves-grey teal-text darken-3"
+                                        >Entrar
+                                    </button>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div><br>
+        </div>
+    </div>
+</section>

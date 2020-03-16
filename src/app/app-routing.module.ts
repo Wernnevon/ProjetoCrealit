@@ -1,3 +1,5 @@
+import { CriarClasseComponent } from './criar-classe/criar-classe.component';
+import { ClasseComponent } from './classe/classe.component';
 import { ClassificacaoAlunosComponent } from './classificacao-alunos/classificacao-alunos.component';
 import { DadosProfessorComponent } from './dados-professor/dados-professor.component';
 import { DadosComponent } from './dados/dados.component';
@@ -70,8 +72,16 @@ const routes: Routes = [
     component: MinhasGameficacoesComponent,
   },
   {
-    path: 'professor/:id/classificacao',
+    path: 'professor/:id/classificacao/:nome',
     component: ClassificacaoAlunosComponent,
+  },
+  {
+    path: 'professor/:id/classe',
+    component: ClasseComponent,
+  },
+  {
+    path: 'professor/:id/criarTurma',
+    component: CriarClasseComponent,
   }
 
 ];

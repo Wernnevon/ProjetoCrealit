@@ -61,10 +61,14 @@ dados() {
 }
 rank() {
   let id = this.route.snapshot.params['id'];
-  this.router.navigate(['/professor/' + id + '/livros']);
+  this.router.navigate(['/professor/' + id + '/classe']);
 }
 aventuras() {
   let id = this.route.snapshot.params['id'];
   this.router.navigate(['/professor/' + id + '/criarHistoria']);
+}
+criarTurma() {
+  let id = this.route.snapshot.params['id'];
+  this.router.navigate(['/professor/' + id + '/criarTurma']);
 }
 }

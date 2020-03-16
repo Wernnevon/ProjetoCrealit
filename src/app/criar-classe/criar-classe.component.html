@@ -1,0 +1,43 @@
+<mat-toolbar class="white">
+    <a class="btn-flat" (click)="back()"><i class="material-icons prefix">navigate_before</i></a>
+    <span style="font-size: 20px; text-transform: uppercase; color: #505050;">{{nome}}</span>
+    <a class="right" (click)="back()">
+        <i class="material-icons" style="color: #505050;">home</i></a>
+</mat-toolbar>
+<section class="teal accent-2">
+    <div class="container">
+        <div class="container"><br>
+            <div class="card-panel">
+                <div>
+                    <div>
+                        <div class="input-field col s12" style="margin-top: 5%;">
+                            <input type="text" id="nome" class="teal-text text-darken-3" [(ngModel)]="nomeTurma" name="nome">
+                            <label class="teal-text text-darken-3" for="nome">Nome da turma</label>
+                          </div>
+                        <h5 class="center">Alunos:</h5>
+                        <mat-accordion>
+                            <mat-expansion-panel *ngFor="let aluno of alunos | async">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        {{aluno.data.nome}}
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                    </mat-panel-description>
+                                </mat-expansion-panel-header>
+                                <ul style="margin-left: 60%; margin-top: 1%; margin-bottom: 0%;"><button
+                                        style="font-size: small;"
+                                        class="btn-flat waves-effect waves-grey teal-text darken-3"
+                                        (click)='add(this.aluno.data)'>Adicionar</button></ul>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                        <button
+                        style="margin:auto; display:block; margin-top: 8%;"
+                        class="btn-flat waves-effect waves-grey teal-text darken-3"
+                        (click)='criarTurma()'>Criar Classe</button>
+                    </div>
+                    <div></div>
+                </div>
+            </div><br>
+        </div>
+    </div>
+</section>
