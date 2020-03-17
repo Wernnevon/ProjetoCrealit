@@ -1,0 +1,12 @@
+.right{
+    display: flex;
+    position: absolute;
+    right: 0px;
+    margin-right: 5%;
+}
+.ranque{
+    font-size: 15pt;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+}

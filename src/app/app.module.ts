@@ -36,6 +36,7 @@ import { environment } from '../environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ClasseComponent } from './classe/classe.component';
 import { CriarClasseComponent } from './criar-classe/criar-classe.component';
+import { RankAlunoComponent } from './rank-aluno/rank-aluno.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { CriarClasseComponent } from './criar-classe/criar-classe.component';
     ClassificacaoAlunosComponent,
     ClasseComponent,
     CriarClasseComponent,
+    RankAlunoComponent,
     ],
   imports: [
     BrowserModule,

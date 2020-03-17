@@ -22,25 +22,46 @@ export class ClassificacaoAlunosComponent implements OnInit {
   user: any;
   nome : any;
   id = this.route.snapshot.params['id'];
+  sala: any;
 
-  turma: any;
-  players: any[];
-  player: any; 
-  turmas: Observable<any[]>;
-  novoArray: Array<any> = new Array;
-  users: any[];
-
-  sala: Classe;
+  alunoz:any;
+  turma:Classe = new Classe;
+  classe: Array<any> = new Array();
   ngOnInit() {
     this.search();
     this.user;
-    this.classe();
-    this.jogadores();
-    this.turma
-    this.players = new Array();
-    this.novoArray = new Array();
-    this.users =new Array();
-  }
+    this.turma;
+    this.getAlunos();
+    this.getTurmas();
+  };
+
+  getAlunos(){
+    this.alunos = this.db.list('alunos').valueChanges();
+    this.alunos.forEach(obj => {
+      obj.forEach(objChild => {
+        this.alunoz = objChild.data;
+      })
+    })
+  };
+
+
+  getTurmas(){
+    let nometurma: String = this.route.snapshot.params['nome'];
+    this.sala = this.db.list('Turmas').valueChanges();
+    this.sala.forEach(obj => {
+      obj.forEach(objChild => {
+        if(objChild.data.nome === nometurma){
+          this.turma = objChild.data;
+          this.classe = this.turma.alunos;
+          return this.turma;
+        }
+        else{
+          return 0
+        }
+      });
+    });
+  };
+
   search(){
     this.id = parseInt(this.id);
     this.professores = this.db.list('professores').valueChanges();
@@ -48,36 +69,15 @@ export class ClassificacaoAlunosComponent implements OnInit {
       obj.forEach(objChild => {
         this.professor = objChild.data;
         if (this.professor.id === this.id) {
-          console.log('retornou!');
           this.user = this.professor;
           this.nome = this.professor.nome
-          console.log(this.user)
-        } else {
-          console.log('não retornou')
+          return true;
+        }else {
           return false;
-        }
-      })
-    })
-  }
-  classe(){
-    this.turmas = this.db.list('Turmas').valueChanges();
-    this.alunos = this.db.list('alunos').valueChanges();
-    let nometurma = this.route.snapshot.params['nome'];
-    this.turmas.forEach(element => {
-      element.forEach(obj => {
-        if(obj.data.nome === nometurma){
-          this.players = obj.data.alunos;
-          console.log(this.players)
-        }
-      })
+        };
+      });
     });
-    this.alunos.forEach(element => {
-      element.forEach(obj => {
-        this.users.push(obj.data)
-        console.log(this.users)
-      })
-    });
-  }
+  };
   home(){
     let id = this.route.snapshot.params['id'];
     this.router.navigate(['/professor/' + id]);
@@ -86,14 +86,14 @@ export class ClassificacaoAlunosComponent implements OnInit {
     let id = this.route.snapshot.params['id'];
     this.router.navigate(['/professor/' + id + '/classe']);
   }
-  jogadores(){
-    this.users.forEach(element =>{
-      this.players.forEach(obj => {
-        if(element.id === obj.id){
-          this.novoArray.push(obj);
-        }
-      })
-    })
+  rank(idAluno){
+    let id = this.route.snapshot.params['id'];
+    let turma = this.route.snapshot.params['nome'];
+    this.router.navigate(['/professor/' + id + '/' + turma + '/rankAluno/' + idAluno]);
+  }
+  criar(){
+      let id = this.route.snapshot.params['id'];
+      this.router.navigate(['/professor/' + id + '/criarHistoria']);
   }
 
 }

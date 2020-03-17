@@ -1,3 +1,4 @@
+import { RankAlunoComponent } from './rank-aluno/rank-aluno.component';
 import { CriarClasseComponent } from './criar-classe/criar-classe.component';
 import { ClasseComponent } from './classe/classe.component';
 import { ClassificacaoAlunosComponent } from './classificacao-alunos/classificacao-alunos.component';
@@ -82,6 +83,10 @@ const routes: Routes = [
   {
     path: 'professor/:id/criarTurma',
     component: CriarClasseComponent,
+  },
+  {
+    path: 'professor/:id/:nome/rankAluno/:idAluno',
+    component: RankAlunoComponent,
   }
 
 ];
